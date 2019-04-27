@@ -5,19 +5,19 @@ import com.sqchen.data.interfaces.Collection;
 public class LinkedList<E> implements Collection<E> {
 
     /**
-     * 头节点
+     * 头指针
      */
     private Node<E> head;
 
     /**
-     * 尾节点
+     * 尾指针
      */
     private Node<E> tail;
 
     private int size;
 
     public LinkedList() {
-        //初始化时创建空的头节点和尾节点，并指向同一个节点，后续增加元素时，尾节点后移，但头节点一直不变
+        //初始化时创建空的头指针和尾指针，并指向同一个节点，后续增加元素时，尾指针后移，但头指针一直不变
         head = new Node<E>();
         tail = head;
         size = 0;
@@ -26,9 +26,9 @@ public class LinkedList<E> implements Collection<E> {
     @Override
     public void add(E e) {
         Node node = new Node<E>(e);
-        //设置尾节点的下一个节点为node
+        //设置尾指针的下一个节点为node
         tail.next = node;
-        //设置node为新的尾节点
+        //设置node为新的尾指针
         tail = node;
         //长度+1
         size++;
